@@ -1,0 +1,19 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "inputblob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "input-workitems/{name}",
+      "connection": ""
+    },
+    {
+      "name": "outputblob",
+      "type": "blob",
+      "direction": "out",
+      "path": "output-workitems/{name}",
+      "connection": ""
+    }
+  ]
+}
