@@ -5,6 +5,6 @@ import azure.functions as func
 
 def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     logging.info(f"Python blob trigger function processed blob \n"
-                 f"Nameeeeeee: {inputblob.name}\n"
-                 f"Blob Sizeeeeee: {inputblob.length} bytes")
+                 f"Name: {inputblob.name}\n"
+                 f"Blob Size: {inputblob.length} bytes")
     outputblob.set(inputblob)
