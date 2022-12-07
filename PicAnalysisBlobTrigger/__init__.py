@@ -34,6 +34,5 @@ def query_output(sql):
     cursor.execute(sql)
     row = cursor.fetchone()
     while row:  
-        print row[0]  
         row = cursor.fetchone()
-    return row
+    return row[0]
