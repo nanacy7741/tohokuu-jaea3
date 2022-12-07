@@ -27,6 +27,10 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     
 ### DB connectionを定義
 def db_connection(sv=server, db=database, un=username, pw=password):    
+    logging.info(server)
+    logging.info(database)
+    logging.info(username)
+    logging.info(password)
     cnxn = pyodbc.connect('DRIVER={ODBC Driver 13 for SQL Server};SERVER='+sv+';DATABASE='+db+';UID='+un+';PWD='+ pw)
     return cnxn.cursor()
 
