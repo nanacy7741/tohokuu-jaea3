@@ -35,4 +35,6 @@ def query_output(sql):
     row = cursor.fetchone()
     while row:  
         row = cursor.fetchone()
+        logging.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        logging.info(row[0])
         return row[0]
