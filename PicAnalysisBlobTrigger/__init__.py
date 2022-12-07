@@ -35,4 +35,4 @@ def query_output(sql):
     row = cursor.fetchone()
     while row:  
         row = cursor.fetchone()
-    return row[0]
+        return row[0]
