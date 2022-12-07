@@ -21,7 +21,7 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
 
     ### SalesLT.Customerはテンプレートとしてあるテーブル
     sql = 'select count(*) from sales;' 
-    logging.info(f"sql result : \n" + query_output(sql))
+    logging.info(f"sql result : %d", query_output(sql))
     
 ### DB connectionを定義
 def db_connection(sv=server, db=database, un=username, pw=password):    
