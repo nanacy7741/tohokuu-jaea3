@@ -7,7 +7,8 @@ import pyodbc
 server = 'tohokuujaeasqlservertest1.database.windows.net'  
 database = 'tohokuujaeasqldatabasetest1'  
 username = 'tohokusqlserveradmin'  
-password = 'tohokuadmin2023@'  
+password = 'tohokuadmin2023@'
+cursor = ""
 
 def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     logging.info(f"Python blob trigger function processed blob \n"
