@@ -16,12 +16,13 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
                  f"Blob Size: {inputblob.length} bytes")
     logging.info(f"github actions setting !!!")
     outputblob.set(inputblob)
-    
+    logging.info(f"output set !!!")
     ### DB connectionしときます
     cursor = db_connection()
-
+    logging.info(f"connection set !!!")
     ### SalesLT.Customerはテンプレートとしてあるテーブル
     sql = 'select count(*) from sales;' 
+    logging.info(f"sql do !!!")
     logging.info(f"sql result : %d", query_output(sql))
     
 ### DB connectionを定義
