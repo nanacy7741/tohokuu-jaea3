@@ -1,7 +1,13 @@
+## libraries
 import logging
-
 import azure.functions as func
+import pyodbc
 
+## initial setting
+server = 'tohokuujaeasqlservertest1.database.windows.net'  
+database = 'tohokuujaeasqldatabasetest1'  
+username = 'tohokusqlserveradmin'  
+password = 'tohokuadmin2023@'  
 
 def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     logging.info(f"Python blob trigger function processed blob \n"
@@ -9,3 +15,23 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
                  f"Blob Size: {inputblob.length} bytes")
     logging.info(f"github actions setting !!!")
     outputblob.set(inputblob)
+    
+    ### DB connectionしときます
+    cursor = db_connection()
+
+    ### SalesLT.Customerはテンプレートとしてあるテーブル
+    sql = 'select count(*) from sales;' 
+    query_output(sql) #結果は847
+    
+### DB connectionを定義
+def db_connection(sv=server, db=database, un=username, pw=password):    
+    cnxn = pyodbc.connect('DRIVER={ODBC Driver 13 for SQL Server};SERVER='+sv+';DATABASE='+db+';UID='+un+';PWD='+ pw)
+    return cnxn.cursor()
+
+### SQLを発行
+def query_output(sql):
+    cursor.execute(sql)
+    row = cursor.fetchone()
+    while row:  
+        print row[0]  
+        row = cursor.fetchone()
