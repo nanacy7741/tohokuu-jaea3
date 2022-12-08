@@ -1,10 +1,12 @@
 ## libraries
+
 import azure.functions as func
 import logging
 import os
-import pyodbc
 import struct
 import sys
+
+import pyodbc
 
 def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     logging.info(f"Python blob trigger function processed blob \n"
