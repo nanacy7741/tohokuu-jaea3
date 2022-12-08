@@ -26,7 +26,7 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
 ### logging.info(server)
     cursor = cnxn.cursor()
 ### logging.info(database)
-    cursor.execute("INSERT INTO Todo VALUES (?, ?, ?)", "2", "frompython", "2022-12-07T00:00:00")
+### cursor.execute("INSERT INTO Todo VALUES (?, ?, ?)", "2", "frompython", "2022-12-07T00:00:00")
 ### logging.info(username)
     cursor.commit()
 ### logging.info(password)
