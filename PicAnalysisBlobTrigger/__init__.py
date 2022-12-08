@@ -20,7 +20,11 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     password = 'tohokuadmin2023@' 
 
     cnxn = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};SERVER='+server+';DATABASE='+database+';ENCRYPT=yes;UID='+username+';PWD='+ password)
+    logging.info(server)
     cursor = cnxn.cursor()
+    logging.info(database)
     cursor.execute("INSERT INTO Todo VALUES (?, ?, ?)", "2", "frompython", "2022-12-07T00:00:00")
+    logging.info(username)
     cursor.commit()
+    logging.info(password)
     logging.info('finished')
