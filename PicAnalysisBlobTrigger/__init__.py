@@ -12,7 +12,7 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
                  f"Blob Size: {inputblob.length} bytes")
     logging.info(f"github actions setting !!!")
 
-    outputblob.set(inputblob)
+### outputblob.set(inputblob)
     
     server = 'tohokuujaeasqlservertest1.database.windows.net' 
     database = 'tohokuujaeasqlservertest1' 
