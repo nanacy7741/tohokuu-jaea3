@@ -22,7 +22,7 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     password = 'tohokuadmin2023@' 
 
 ### cnxn = pyodbc.connect("Server=tcp:tohokuujaeasqlservertest1.database.windows.net,1433;Initial Catalog=tohokuujaeasqldatabasetest1;Persist Security Info=False;User ID=tohokusqlserveradmin;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
-    cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';ENCRYPT=yes;UID='+username+';PWD='+ password)
+    cnxn = pyodbc.connect("Driver={ODBC Driver 13 for SQL Server};Server=tcp:tohokuujaeasqlservertest1.database.windows.net,1433;Database=tohokuujaeasqldatabasetest1;Uid=tohokusqlserveradmin;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
     logging.info(server)
     cursor = cnxn.cursor()
     logging.info(database)
