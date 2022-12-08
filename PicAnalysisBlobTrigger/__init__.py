@@ -14,7 +14,7 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
 
 ### outputblob.set(inputblob)
     
-    server = 'tohokuujaeasqlservertest1.database.windows.net' 
+    server = 'tcp:tohokuujaeasqlservertest1.database.windows.net' 
     database = 'tohokuujaeasqlservertest1' 
     username = 'tohokusqlserveradmin' 
     password = 'tohokuadmin2023@' 
