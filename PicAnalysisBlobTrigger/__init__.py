@@ -22,10 +22,10 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     cursor = cnxn.cursor()
 ### logging.info(database)
     cursor.execute("select top(1) * from Todo")
-### while row:
+    while row:
     ###print (str(row[0]) + " " + str(row[1]))
-###     row = cursor.fetchone()
-###     logging.info(row[0])
+        row = cursor.fetchone()
+        logging.info(row[0])
 ### logging.info(username)
     ###cursor.commit()
 ### logging.info(password)
