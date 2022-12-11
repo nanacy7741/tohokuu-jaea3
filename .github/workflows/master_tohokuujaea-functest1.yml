@@ -65,6 +65,6 @@ jobs:
           app-name: 'tohokuujaea-functest1'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B64F9219F3F24500920260F697A913C8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DA71243BE22F4A56BB8828A9F1921D80 }}
           scm-do-build-during-deployment: true
           enable-oryx-build: true
