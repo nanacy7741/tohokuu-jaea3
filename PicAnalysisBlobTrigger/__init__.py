@@ -12,11 +12,15 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     cnxn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};Server=tcp:tohokuujaeasqlservertest1.database.windows.net;Database=tohokuujaeasqldatabasetest1;Uid=tohokusqlserveradmin;Pwd=tohokuadmin2023@;')
     cursor = cnxn.cursor()
     logging.info("connect success !!!")
-
-    cursor.execute("SELECT @@version;") 
-    row = cursor.fetchone() 
-    while row: 
-        logging.info(row[0])
-        row = cursor.fetchone()
+    
+    cursor.execute("INSERT INTO Todo VALUES (3, 'aaaaaaaaaaa', 'bbbbeeeeebbbb');")
+    cnxn.commit
+    cursor.close()
+    cnxn.close()
+###    cursor.execute("SELECT @@version;") 
+###    row = cursor.fetchone() 
+###    while row: 
+###        logging.info(row[0])
+###        row = cursor.fetchone()
 
     logging.info('finished !!!')
