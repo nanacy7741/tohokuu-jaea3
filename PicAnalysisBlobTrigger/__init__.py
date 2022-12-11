@@ -13,7 +13,7 @@ def main(inputblob: func.InputStream, outputblob: func.Out[func.InputStream]):
     cursor = cnxn.cursor()
     logging.info("connect success !!!")
     
-    cursor.execute("INSERT INTO Todo VALUES (3, 'aaaaaaaaaaa', 'bbbbeeeeebbbb');")
+    cursor.execute("INSERT INTO Todo VALUES ('aaaaaaaaaaa', '2022-12-07T00:00:00.0000000');")
     cnxn.commit
     cursor.close()
     cnxn.close()
